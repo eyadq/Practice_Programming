@@ -1,0 +1,27 @@
+package day24_tasks;
+
+import java.util.Scanner;
+
+public class MethodPractice4 {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter three angles: ");
+        double angle1 = input.nextDouble();
+        double angle2 = input.nextDouble();
+        double angle3 = input.nextDouble();
+
+        printShape(angle1, angle2, angle3);
+    }
+
+    public static void printShape(double angle1, double angle2, double angle3){
+        if(angle1 + angle2 + angle3 == 180){
+            System.out.println("This is a triangle");
+        } else if(angle1 + angle2 + angle3 == 360){
+            System.out.println("This is a circle");
+        } else {
+            System.out.println("This is not an angle");
+        }
+    }
+}
