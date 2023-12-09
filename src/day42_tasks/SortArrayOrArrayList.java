@@ -13,6 +13,6 @@ public class SortArrayOrArrayList {
     }
 
     public static String[] sortCollection(String[] arr){
-
+        return new String[0];
     }
 }
