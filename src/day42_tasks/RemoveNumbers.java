@@ -11,9 +11,9 @@ public class RemoveNumbers {
 
         Random random = new Random();
 
-        for(int i=0; i<15; i++){
-            nums.add(random.nextDouble(250));
-        }
+//        for(int i=0; i<15; i++){
+//            nums.add(random.nextDouble(250));
+//        }
 
         System.out.println("List before removeNumbers() method: " + nums);
         removeNumbers(nums);

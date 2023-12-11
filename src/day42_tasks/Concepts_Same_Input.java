@@ -2,7 +2,7 @@ package day42_tasks;
 
 import java.util.*;
 
-public class Concepts {
+public class Concepts_Same_Input {
 
     public static void main(String[] args) {
         String str = "DC501GCCCA098911";

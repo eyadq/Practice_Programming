@@ -1,5 +1,7 @@
 package day42_tasks;
 
+import my_utilities.ArrayUtil;
+
 import java.util.*;
 
 public class SortArrayOrArrayList {
@@ -13,6 +15,6 @@ public class SortArrayOrArrayList {
     }
 
     public static String[] sortCollection(String[] arr){
-        return new String[0];
+        return ArrayUtil.sort(arr);
     }
 }

@@ -1,6 +1,6 @@
 package my_utilities;
 
-import java.util.Arrays;
+import java.util.*;
 
 public class ArrayUtil {
 
@@ -19,6 +19,22 @@ public class ArrayUtil {
         //task4
         int newAddition = 8;
         System.out.println(Arrays.toString(addToArr(arr, newAddition)));
+
+        //sort()
+        int[] needsSorted = {1, 5, 10, 13, 2, 6};
+        sort(needsSorted);
+        System.out.println(Arrays.toString(needsSorted));
+        char[] chars = {'a', 'c', '@'};
+        sort(chars);
+        System.out.println(Arrays.toString(chars));
+        String str = "Cananda9&6";
+        str = sort(str);
+        System.out.println(str);
+
+        String[] strs = {"Loopcamp", "apple", "@", "Friday", "old"};
+        System.out.println(Arrays.toString(sort(strs)));
+
+
     }
 
     public static int biggestAndSmallestNumber(int[] arr, String method){
@@ -127,6 +143,77 @@ public class ArrayUtil {
             }
         }
         return  new int[]{largest, middle, smallest};
+    }
+
+    public static void sort(int[] arr){
+        boolean reset = false;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if(reset){
+                i = 0;
+                reset = false;
+            }
+            if( arr[i] > arr[i+1]){
+                int temp = arr[i+1];
+                arr[i+1] = arr[i];
+                arr[i] = temp;
+                i=0;
+                reset = true;
+            }
+        }
+    }
+
+    public static void sort(double[] arr){
+        boolean reset = false;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if(reset){
+                i = 0;
+                reset = false;
+            }
+            if( arr[i] > arr[i+1]){
+                double temp = arr[i+1];
+                arr[i+1] = arr[i];
+                arr[i] = temp;
+                i=0;
+                reset = true;
+            }
+        }
+    }
+
+    public static void sort(char[] arr){
+        boolean reset = false;
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            if(reset){
+                i = 0;
+                reset = false;
+            }
+            if( (int)arr[i] > (int)arr[i+1]){
+                char temp = arr[i+1];
+                arr[i+1] = arr[i];
+                arr[i] = temp;
+                i = 0;
+                reset = true;
+            }
+        }
+    }
+
+    public static String sort(String str){
+        char[] arr = str.toCharArray();
+        sort(arr);
+        return new String(arr);
+    }
+
+    public static String[] sort(String[] strs){
+        Map<String, Character> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+        for (String str : strs){
+            //map.put(str, str.charAt(0));
+            set.add(str);
+        }
+        //Character[] arr = map.values().toArray(new Character[0]);
+        return set.toArray(new String[0]);
     }
 
 }
