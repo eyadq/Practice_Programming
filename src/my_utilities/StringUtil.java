@@ -1,7 +1,5 @@
 package my_utilities;
 
-import java.util.Arrays;
-import java.util.Locale;
 import java.util.Scanner;
 
 public class StringUtil {
@@ -86,7 +84,11 @@ public class StringUtil {
         return letterCount;
     }
 
-    public static String uniqueAndDuplicateCharacters(String str, String method){
+    enum MethodType {
+        UNIQUES,
+        DUPLICATES
+    }
+    public static String uniqueAndDuplicateCharacters(String str, MethodType method){
         String uniques = ""; //goal is to fill these 2 strings with correct answer
         String duplicates = ""; //goal is to fill these 2 strings with correct answer
         boolean isUnique = true;
@@ -115,21 +117,17 @@ public class StringUtil {
             }
         }//outer loop
 
-        if(method.equals("unique")){
-            return uniques;
-        } else {
-            return duplicates;
-        }
+        return (method.equals(MethodType.UNIQUES)) ? uniques : duplicates;
     }
 
     public static String uniqueCharacters(String str){
 
-        return uniqueAndDuplicateCharacters(str, "unique");
+        return uniqueAndDuplicateCharacters(str, MethodType.UNIQUES);
     }
 
     public static String duplicateCharacters(String str){
 
-        return uniqueAndDuplicateCharacters(str, "duplicate");
+        return uniqueAndDuplicateCharacters(str, MethodType.DUPLICATES);
     }
 
     public static String matchPatternInString(String str, boolean[] pattern) {
